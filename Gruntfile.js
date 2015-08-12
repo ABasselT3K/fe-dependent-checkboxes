@@ -142,7 +142,7 @@ module.exports = function(grunt) {
 
     require('jit-grunt')(grunt);
 
-    grunt.registerTask('default', ['jsdev', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'test']);
     grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'test']);
     grunt.registerTask('test', ['mocha']);

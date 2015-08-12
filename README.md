@@ -6,4 +6,4 @@
 npm i ; bower i ; grunt
 ```
 
-Implement class `DependentCheckboxes` here `/www/js/dependent-checkboxes.js`.
+Implement class `DependentCheckboxes` here `/www/js/dependent-checkboxes.js` to pass all tests.

@@ -1,0 +1,158 @@
+/**
+ * Button
+ *
+ * Styleguide 1.7
+ */
+
+/**
+ * Primary button
+ *
+ * default - Normal button
+ * :hover - Hover
+ * :active - Active
+ * :focus - Focus
+ *
+ * markup:
+ * <a class="btn btn-primary {$modifiers}" href="#" role="button">Link</a>
+ * <button class="btn btn-primary {$modifiers}" type="submit">Button</button>
+ * <input class="btn btn-primary {$modifiers}" type="button" value="Input">
+ * <input class="btn btn-primary {$modifiers}" type="submit" value="Submit">
+ *
+ * Styleguide 1.7.1
+ */
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+    line-height: 26px;
+    border: 0;
+    border-radius: 0;
+    font-size: 18px;
+    .font-bold();
+    white-space: normal;
+    transition: @transition-basic;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:active {
+        box-shadow: none;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        width: auto;
+        padding: 6px 20px 7px;
+        line-height: 21px;
+        font-size: 15px;
+    }
+}
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: darken(@background, 10%);
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+/**
+ * Secondary button
+ *
+ * default - Normal button
+ * :hover - Hover
+ * :active - Active
+ * :focus - Focus
+ *
+ * markup:
+ * <a class="btn btn-secondary {$modifiers}" href="#" role="button">Link</a>
+ * <button class="btn btn-secondary {$modifiers}" type="submit">Button</button>
+ * <input class="btn btn-secondary {$modifiers}" type="button" value="Input">
+ * <input class="btn btn-secondary {$modifiers}" type="submit" value="Submit">
+ *
+ * Styleguide 1.7.2
+ */
+.btn-secondary {
+    color: #fff;
+    background: @btn-secondary-bg;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+        background: darken(@btn-secondary-bg, 10%);
+    }
+}
+
+.btn-submit {
+    margin-top: 20px;
+
+    @media (min-width: @screen-sm-min) {
+        margin-top: 0;
+    }
+}
+
+/**
+ * Link button
+ *
+ * default - Normal button
+ * :hover - Hover
+ * :active - Active
+ * :focus - Focus
+ *
+ * markup:
+ * <a class="btn btn-link {$modifiers}" href="#" role="button">Link</a>
+ * <button class="btn btn-link {$modifiers}" type="submit">Button</button>
+ * <input class="btn btn-link {$modifiers}" type="button" value="Input">
+ * <input class="btn btn-link {$modifiers}" type="submit" value="Submit">
+ *
+ * Styleguide 1.7.3
+ */
+.btn-link {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/**
+ * Disabled button
+ *
+ * markup:
+ * <a class="btn btn-primary disabled" href="#" role="button">Link</a>
+ * <button class="btn btn-primary" type="submit" disabled>Button</button>
+ * <input class="btn btn-primary" type="button" value="Input" disabled>
+ * <input class="btn btn-primary" type="submit" value="Submit" disabled>
+ * <a class="btn btn-secondary disabled" href="#" role="button">Link</a>
+ * <button class="btn btn-secondary" type="submit" disabled>Button</button>
+ * <input class="btn btn-secondary" type="button" value="Input" disabled>
+ * <input class="btn btn-secondary" type="submit" value="Submit" disabled>
+ *
+ * Styleguide 1.7.4
+ */

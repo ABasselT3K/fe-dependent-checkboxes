@@ -1,0 +1,166 @@
+.settings {
+    background: @gray-bg;
+
+    .switch {
+        .clearfix();
+        margin-top: 20px;
+
+        .btn {
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 5px;
+            border: 1px solid @brand-primary;
+            font-size: 15px;
+        }
+
+        h1 {
+            background: @brand-primary;
+            color: #fff;
+            cursor: default;
+        }
+
+        a {
+            background: #fff;
+        }
+    }
+
+    .place {
+        margin-bottom: 30px;
+
+        .btn {
+            padding: 6px 0 6px 10px;
+            font-size: 15px;
+            text-align: right;
+            white-space: nowrap;
+        }
+    }
+
+    .filter {
+        .h4 {
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width: @screen-xs-max) {
+        .map {
+            display: none;
+        }
+
+        .filter {
+            margin-bottom: 20px;
+
+            .collapse-body {
+                .clearfix();
+                padding: 0 (@gutter / 2);
+                border: 1px solid @gray-border;
+                background: #fff;
+            }
+
+            .h4 {
+                margin-top: @gutter / 2;
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        margin-bottom: 50px;
+
+        .map {
+            margin: -20px -45px -20px -20px;
+        }
+
+        .switch {
+            max-width: 400px;
+            margin: 50px auto 40px;
+        }
+
+        .column,
+        .filter {
+            float: left;
+            width: 50%;
+        }
+
+        .column {
+            margin-bottom: 20px;
+            padding-right: 50px;
+            border-right: 1px solid @gray-border;
+        }
+
+        .filter {
+            padding-left: 50px;
+
+            .btn-secondary {
+                display: none;
+            }
+        }
+
+        .h4 {
+            margin-top: 0;
+        }
+
+        .place {
+            .btn {
+                padding-top: 9px;
+            }
+
+            .icon {
+                margin: -2px 5px 0 10px;
+            }
+        }
+
+        .collapse {
+            display: block;
+            height: auto !important;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .checkboxes {
+            margin-bottom: 20px;
+        }
+
+        .checkbox {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        .map {
+            svg {
+                width: 485px;
+                height: 289px;
+            }
+        }
+
+        .checkboxes {
+            .consultant & {
+                .clearfix();
+
+                .checkbox {
+                    float: left;
+                    width: 50%;
+
+                    & + .checkbox {
+                        margin-top: 0;
+                    }
+
+                    label {
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: @screen-lg-min) {
+        .map {
+            svg {
+                width: 509px;
+                height: 304px;
+            }
+        }
+    }
+}

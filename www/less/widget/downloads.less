@@ -1,0 +1,115 @@
+/**
+ * Downloads
+ *
+ * Add `.clear` class on every 3n+1 column
+ *
+ * markup:
+ * <div class="downloads widget">
+        <div class="container">
+            <div class="widget-container">
+                <h2>dokumenty k produktu</h2>
+                <div class="row list">
+                    <div class="col-sm-4 item clear">
+                        <div class="pull-left">
+                            <span class="icon icon-pdf-orange" data-grunticon-embed></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">pojistné a obchodní podmínky</a><br>
+                            <small>pdf, 87 kB, publikováno 22.2.2015</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 item">
+                        <div class="pull-left">
+                            <span class="icon icon-pdf-orange" data-grunticon-embed></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">oznámení úrazu</a><br>
+                            <small>pdf, 395 kB</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 item">
+                        <div class="pull-left">
+                            <span class="icon icon-pdf-orange" data-grunticon-embed></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">oznámení o odstoupení od pojistné smlouvy (od 1.1.2014)</a><br>
+                            <small>pdf, 81 kB</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 item clear">
+                        <div class="pull-left">
+                            <span class="icon icon-pdf-orange" data-grunticon-embed></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">sazebník poplatků</a><br>
+                            <small>pdf, 192 kB</small>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 item">
+                        <div class="pull-left">
+                            <span class="icon icon-pdf-orange" data-grunticon-embed></span>
+                        </div>
+                        <div class="info">
+                            <a href="#">zpráva ošetřujícího lékaře - jednotný formulář ČAP</a><br>
+                            <small>pdf, 176 kB</small>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <a href="#">Všechny dokumenty a formuláře k produktům<span class="icon icon-chevron-right-orange" data-grunticon-embed></span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.8
+ */
+.downloads {
+    .list {
+        margin-bottom: 10px;
+
+        .icon {
+            display: block;
+            margin-top: -2px;
+
+            svg {
+                width: 20px;
+                height: 25px;
+
+                path {
+                    fill: @brand-primary;
+                }
+            }
+        }
+    }
+
+    .item {
+        margin-bottom: 40px;
+    }
+
+    .info {
+        padding-left: 35px;
+        line-height: 1.222;
+
+        a {
+            .link-secondary();
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .list {
+            .icon {
+                margin-top: -10px;
+
+                svg {
+                    width: 27px;
+                    height: 34px;
+                }
+            }
+        }
+
+        .info {
+            padding-left: 42px;
+        }
+    }
+}

@@ -1,0 +1,254 @@
+.consultant {
+    > .container {
+        border-bottom: 1px solid @gray-border;
+        margin-bottom: 80px;
+    }
+
+    .person {
+        @img-width: 65px;
+        @img-height: 88px;
+
+        position: relative;
+        border-top: 1px solid @gray-border;
+        margin: 0 (-@gutter / 2);
+        padding: 20px;
+        clear: both;
+        font-size: 15px;
+
+        h2 {
+            margin: 5px 0 10px;
+            font-size: 15px;
+        }
+
+        > a {
+            .font-bold();
+
+            .icon {
+                margin-right: 10px;
+            }
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            padding-left: 40px;
+
+            &:before {
+                display: none;
+            }
+
+            .icon {
+                position: absolute;
+                left: 0;
+            }
+        }
+
+        .img {
+            position: relative;
+            float: left;
+            width: 65px;
+            margin-right: 20px;
+        }
+
+        img {
+            margin-bottom: 0;
+        }
+
+        .icon-vip {
+            position: absolute;
+            top: 0;
+            left: -9px;
+
+            svg {
+                width: 21px;
+                height: 21px;
+            }
+        }
+
+        .tooltip {
+            min-width: 200px;
+        }
+
+        .collapse-body {
+            clear: both;
+            border-top: 1px solid @gray-box-bg;
+
+            > .row {
+                padding-bottom: 20px;
+            }
+        }
+
+        .collapse-trigger {
+            margin-top: 15px;
+            cursor: pointer;
+
+            .trigger-show,
+            .trigger-hide {
+                .icon {
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+            }
+
+            .trigger-show {
+                display: none;
+            }
+
+            .trigger-hide {
+                display: block;
+            }
+
+            &.collapsed {
+                .trigger-hide {
+                    display: none;
+                }
+
+                .trigger-show {
+                    display: block;
+                }
+            }
+        }
+
+        h3,
+        h4 {
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        .contact {
+            .font-bold();
+
+            a {
+                display: block;
+                padding-bottom: 10px;
+                .text-overflow();
+            }
+
+            .icon {
+                display: none;
+            }
+        }
+
+        .address {
+            > div {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .pagination-wrap {
+        clear: both;
+        border-top: 1px solid @gray-border;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        .person {
+            h4 {
+                margin: 0;
+                color: @text-color;
+                .font-normal();
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .person {
+            font-size: 15px;
+            position: relative;
+            padding-left: 170px;
+            min-height: 215px;
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                display: none;
+            }
+
+            h4 {
+                margin: 0 0 3px;
+            }
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .icon-vip {
+                left: -18px;
+
+                svg {
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+
+            .contact {
+                padding-bottom: 0;
+
+                .icon {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+
+            .address {
+                > div {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .img {
+                position: absolute;
+                left: @gutter / 2;
+                width: 130px;
+            }
+
+            ul {
+                margin-bottom: 0;
+            }
+
+            li {
+                padding-left: 30px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .icon {
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                    }
+                }
+            }
+
+            .collapse-body {
+                border: 0;
+
+                > .row {
+                    padding-bottom: 0;
+                }
+            }
+
+            .collapse-trigger {
+                display: none;
+            }
+
+            .collapse {
+                display: block;
+            }
+        }
+    }
+}

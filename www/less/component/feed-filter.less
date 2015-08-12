@@ -1,0 +1,36 @@
+.feed-filter {
+    margin-bottom: 20px;
+
+    .filter {
+        border: 1px solid @gray-border;
+        background: #fff;
+    }
+
+    .filter-inner {
+        .clearfix();
+        padding: (@gutter / 2) (@gutter / 2) 0;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        margin-bottom: 40px;
+
+        .filter {
+            border: 0;
+            background: @gray-bg;
+        }
+
+        .filter-inner {
+            padding: (@gutter / 2 - 3) (@gutter / 2);
+        }
+
+        .checkbox {
+            float: left;
+            margin: 0 30px 0 0;
+            white-space: nowrap;
+
+            label {
+                padding-right: 20px;
+            }
+        }
+    }
+}

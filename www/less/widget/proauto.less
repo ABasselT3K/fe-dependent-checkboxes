@@ -1,0 +1,32 @@
+.proauto {
+    .vehicle {
+        label {
+            padding-left: 100px;
+        }
+
+        .img-icon {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 55px;
+            height: 55px;
+            background: url('../../gfx/vehicle-type.png') no-repeat;
+        }
+
+        .n1 .img-icon { background-position: 0 -100px; }
+        .m .img-icon { background-position: 0 -200px; }
+
+        input {
+            top: 13px;
+            margin-left: -100px;
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        .vehicle {
+            label {
+                padding-top: 13px;
+            }
+        }
+    }
+}

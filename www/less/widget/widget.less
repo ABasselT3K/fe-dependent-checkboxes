@@ -1,0 +1,79 @@
+/**
+ * Basic content
+ *
+ * markup:
+ * <div class="widget">
+        <div class="container">
+            <div class="widget-container">
+                <h2>příklad ze života</h2>
+                <h3 class="h4">Půjčka ProBydlení Expres, s akontací 40 % z cílové částky, se státní podporou:</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Při průměrné výši překlenovacího úvěru 300 000 Kč a úrokové sazbě 3 % ročně činí měsíční platba překlenovacího úvěru 2 208 Kč. Překlenovací úvěr je poskytován po dobu do přidělení cílové částky, v tomto případě na 3 roky a 2 měsíce. Půjčka ProBydlení je zcela zdarma.</p>
+                        <p>Po přidělení cílové částky bude Půjčka ProBydlení splacena zůstatkem účtu stavebního spoření a úvěrem ze stavebního spoření. Úvěr ze stavebního spoření bude úročen úrokovou sazbou 2,99 % ročně.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.17
+ */
+.widget {
+    .widget-container {
+        padding: 30px 0 20px;
+    }
+
+    h2,
+    .container > h3 {
+        margin-bottom: 25px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @media (max-width: @screen-xs-max) {
+        border-bottom: 1px solid @gray-border;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .widget-container {
+            padding: 65px 0 60px;
+            border-bottom: 1px solid @gray-border;
+        }
+
+        h2 {
+            margin-bottom: 45px;
+        }
+    }
+}
+
+/**
+ * Basic content - condensed
+ *
+ * Condensed version has smaller margin on bottom of the widget.
+ *
+ * markup:
+ * <div class="widget widget-condensed">
+        <div class="container">
+            <div class="container">
+                <h2>příklad ze života</h2>
+                <h3 class="h4">Půjčka ProBydlení Expres, s akontací 40 % z cílové částky, se státní podporou:</h3>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Při průměrné výši překlenovacího úvěru 300 000 Kč a úrokové sazbě 3 % ročně činí měsíční platba překlenovacího úvěru 2 208 Kč. Překlenovací úvěr je poskytován po dobu do přidělení cílové částky, v tomto případě na 3 roky a 2 měsíce. Půjčka ProBydlení je zcela zdarma.</p>
+                        <p>Po přidělení cílové částky bude Půjčka ProBydlení splacena zůstatkem účtu stavebního spoření a úvěrem ze stavebního spoření. Úvěr ze stavebního spoření bude úročen úrokovou sazbou 2,99 % ročně.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.17.1
+ */
+.widget-condensed {
+    .widget-container {
+        padding-bottom: 0;
+    }
+}

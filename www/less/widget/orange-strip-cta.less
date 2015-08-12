@@ -1,0 +1,285 @@
+/**
+ * Orange strip CTA
+ *
+ * You can place 1&ndash;4 buttons inside
+ *
+ * markup:
+ * <div class="orange-strip-cta">
+        <div class="container">
+            <ul>
+                <li class="primary">
+                    <a href="#" class="btn">
+                        <span class="icon icon-mobile-white" data-grunticon-embed></span>
+                        <span class="text-overflow">sjednej online</span>
+                        <small>z pohodlí domova</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn">
+                        <span class="icon icon-hotline-white" data-grunticon-embed></span>
+                        <span class="text-overflow">přes telefon</span>
+                        <small>zdarma na: 800 22 55 55</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn">
+                        <span class="icon icon-location-white" data-grunticon-embed></span>
+                        <span class="text-overflow">osobně</span>
+                        <small>poradci a pobočky</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ *
+ * Styleguide 2.2
+ */
+
+/**
+ * Orange strip CTA with 4 buttons
+ *
+ * 4 buttons variant has special class `.btn-4`
+ *
+ * markup:
+ * <div class="orange-strip-cta btn-4">
+        <div class="container">
+            <ul>
+                <li class="primary">
+                    <a href="#" class="btn">
+                        <span class="icon icon-mobile-white" data-grunticon-embed></span>
+                        <span class="text-overflow">sjednej online</span>
+                        <small>z pohodlí domova</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn">
+                        <span class="icon icon-hotline-white" data-grunticon-embed></span>
+                        <span class="text-overflow">přes telefon</span>
+                        <small>zdarma na: 800 22 55 55</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn">
+                        <span class="icon icon-location-white" data-grunticon-embed></span>
+                        <span class="text-overflow">osobně</span>
+                        <small>poradci a pobočky</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn">
+                        <span class="icon icon-hotline-white" data-grunticon-embed></span>
+                        <span class="text-overflow">zavoláme vám</span>
+                        <small>zdarma na: 800 22 55 55</small>
+                        <span class="icon icon-chevron-right" data-grunticon-embed></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ *
+ * Styleguide 2.2.1
+ */
+.orange-strip-cta {
+    ul {
+        .list-unstyled();
+        margin: 0 (-@gutter / 2);
+    }
+
+    li {
+        position: relative !important;
+    }
+
+    .btn {
+        display: block;
+        padding: 14px 55px;
+        vertical-align: middle;
+        text-align: left;
+        border-bottom: 1px solid @gray-border;
+        line-height: 1;
+        font-size: 16px;
+        color: @text-color;
+
+
+        .lt-ie9 & {
+            line-height: normal;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: darken(#fff, 10%);
+        }
+    }
+
+    .text-overflow {
+        display: block;
+        .text-overflow();
+        line-height: normal;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: @gutter / 2;
+        margin-top: -13px;
+
+        svg path {
+            fill: @text-color;
+            transition: @transition-basic;
+        }
+    }
+
+    small {
+        display: block;
+        padding-top: 6px;
+        font-size: 12px;
+        .font-normal();
+    }
+
+    .icon-chevron-right {
+        left: auto;
+        right: @gutter / 2;
+        margin-right: -10px;
+    }
+
+    .primary {
+        .btn {
+            background: @brand-primary;
+            color: #fff;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: darken(@brand-primary, 10%);
+                color: #fff;
+
+                .icon {
+                    svg path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+
+        .icon {
+            svg path {
+                fill: #fff;
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        text-align: center;
+        background: #f3742b;
+        background: radial-gradient(ellipse at 400px 11px, #f3742b 0%, #a73611 100%);
+        border-top: 1px solid fadeout(#fff, 85%);
+
+        li {
+            display: inline-table;
+            width: 240px;
+            margin: 0 -3px; // inline gutter fix
+
+            .android-lte-43 & > a {
+                margin-bottom: -8px;
+            }
+        }
+
+        .btn {
+            padding: 14px 20px 17px 75px;
+            border: 0;
+            border-right: 1px solid fadeout(#fff, 85%);
+            color: #fff;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: fadeout(#fff, 83%);
+
+                .lt-ie9 & {
+                    background-color: #f08c53;
+                }
+            }
+        }
+
+        .icon {
+            left: 17px;
+            margin-top: -20px;
+
+            svg {
+                width: 40px;
+                height: 40px;
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+
+        small {
+            .text-overflow();
+            padding-top: 6px;
+        }
+
+        .icon-chevron-right {
+            display: none;
+        }
+
+        .primary {
+            .btn {
+                border-right: 0;
+                background: #d76d3c;
+                background: fadeout(#fff, 87%);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: fadeout(#fff, 80%);
+                }
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        &.btn-4 {
+            li {
+                width: 180px;
+            }
+
+            .btn {
+                padding: 20px 10px 20px 50px;
+            }
+
+            .icon {
+                left: 13px;
+                margin-top: -13px;
+
+                svg {
+                    width: 27px;
+                    height: 27px;
+                }
+            }
+
+            small {
+                display: none;
+            }
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        li {
+            width: 235px;
+        }
+    }
+
+    @media (min-width: @screen-lg-min) {
+        li {
+            width: 247px;
+        }
+    }
+}

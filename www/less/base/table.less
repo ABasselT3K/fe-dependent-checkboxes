@@ -1,0 +1,56 @@
+/**
+ * Table
+ *
+ * Styleguide 1.5
+ */
+
+/**
+ * Basic table
+ *
+ * Use `.highlight` for color highlighted content.
+ *
+ * markup:
+ * <table>
+        <tbody>
+            <tr>
+                <th>0</th>
+                <td>mauris</td>
+                <td>tellus</td>
+                <td>morbi</td>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>mauris</td>
+                <td>tellus</td>
+                <td>morbi</td>
+            </tr>
+            <tr>
+                <th><strong class="highlight">2</strong></th>
+                <td><strong class="highlight">mauris</strong></td>
+                <td><strong class="highlight">tellus</strong></td>
+                <td><strong class="highlight">morbi</strong></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>mauris</td>
+                <td>tellus</td>
+                <td>morbi</td>
+            </tr>
+        </tbody>
+    </table>
+ *
+ * Styleguide 1.5.1
+ */
+.main table {
+    border: 1px solid @table-border-color;
+    font-size: 15px;
+
+    th {
+        .font-bold();
+        color: @gray-dark;
+    }
+
+    > thead > tr > th {
+        border-bottom: 0;
+    }
+}

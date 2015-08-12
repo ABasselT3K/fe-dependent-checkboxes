@@ -1,0 +1,30 @@
+/**
+ * Perex
+ *
+ * markup:
+ * <div class="perex widget">
+        <div class="container">
+            <p>Na cesty? Jedině s pojištěním ProCesty! Opravdové pojištění, které vám dodá jistotu a pocit bezpečí, ať už budete kdekoliv.  Zdarma zahrnuje nonstop asistenční službu a spoustu dalších výhod. Wüstenrot stojí při vás za všech okolností.</p>
+        </div>
+    </div>
+ *
+ * Styleguide 2.3
+ */
+.perex {
+    .container {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        background: @gray-bg;
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+
+        .container {
+            padding-top: 33px;
+            padding-bottom: 12px;
+            border-bottom: 0;
+        }
+    }
+}

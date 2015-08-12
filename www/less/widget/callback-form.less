@@ -1,0 +1,44 @@
+/**
+ * Callback form
+ *
+ * markup:
+ * <div class="callback-form widget">
+        <div class="container">
+            <div class="widget-container">
+                <h2>nebo nám dovolte, abychom se ozvali my vám:</h2>
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="cf1">Vaše jméno</label>
+                        <input type="text" class="form-control" id="cf1">
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="cf2">Váš telefon</label>
+                        <input type="phone" class="form-control" id="cf2">
+                    </div>
+                </div>
+                <label for="cf3">Napiště prosím co byste rádi věděli</label>
+                <textarea class="form-control form-group" rows="6" id="cf3"></textarea>
+                <div class="row">
+                    <div class="col-sm-9 form-group">
+                        <div class="checkbox checkbox-required">
+                            <input type="checkbox" id="requiredCheckbox">
+                            <label for="requiredCheckbox">Souhlas se zpracováním osobních údajů - zaškrtnutím tohoto pole vyjadřujete souhlas se zpracováním Vašich osobních údajů za <a href="#">těchto podmínek</a></label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 form-group text-right">
+                        <input type="submit" class="btn btn-secondary btn-submit" value="kontaktujte mne">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.6
+ */
+.callback-form {
+    .checkbox {
+        a {
+            color: #4d58c4;
+        }
+    }
+}

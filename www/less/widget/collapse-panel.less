@@ -1,0 +1,95 @@
+/**
+ * Collapse panel
+ *
+ * markup:
+ * <div class="collapse-panel">
+        <div class="container">
+            <div class="collapse-panel-container">
+                <div class="collapse-trigger collapsed" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    více informací o cestovním pojištění <span class="icon icon-chevron-down-text" data-grunticon-embed></span>
+                </div>
+                <div class="collapse-body collapse" id="collapseExample">
+                    <div>
+                        <h3>Limity pojistného plnění a denní sazby</h3>
+                        <p>Pro stanovení pojistného je důležité správně zvolit regionální zónu a věkovou kategorii.</p>
+                        <h4>Regionální zóna</h4>
+                        <ul>
+                            <li>Evropa: zeměpisná oblast Evropy s výjimkou ČR, dále Turecko, Izrael, Tunisko, Kanárské ostrovy, Maroko, Egypt</li>
+                            <li>Svět bez ČR, USA, Kanady a Austrálie</li>
+                            <li>Svět: oblast celého světa bez ČR</li>
+                        </ul>
+                        <h4>Věková kategorie</h4>
+                        <ul>
+                            <li>dítě: 0 – 18 let</li>
+                            <li>dospělý: 19 – 69 let</li>
+                            <li>senior: nad 70 let</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.7
+ */
+.collapse-panel {
+    border-bottom: 1px solid @gray-border;
+
+    .collapse-trigger {
+        display: block;
+        margin: 0 -@gutter/2;
+        padding: 13px @gutter/2;
+        font-size: 16px;
+        background-color: @gray-box-bg;
+        border-bottom: 1px solid @gray-border;
+        cursor: pointer;
+
+        .icon {
+            float: right;
+            transition: transform 300ms;
+            transform: rotate(180deg);
+
+            .lt-ie9 & {
+                filter: ~"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+            }
+
+            svg {
+                path {
+                    fill: @text-color;
+                }
+            }
+        }
+
+        &.collapsed {
+            background-color: transparent;
+            border-bottom: 0;
+
+            .icon {
+                transform: rotate(0deg);
+
+                .lt-ie9 & {
+                    filter: ~"progid:DXImageTransform.Microsoft.BasicImage(rotation=0)";
+                }
+            }
+        }
+    }
+
+    .collapse-body {
+        > div {
+            margin: 20px 0;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        border-bottom: 0;
+
+        .collapse-panel-container {
+            border-bottom: 1px solid @gray-border;
+        }
+
+        .collapse-trigger {
+            margin: 0;
+            padding: 18px 15px;
+        }
+    }
+}

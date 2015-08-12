@@ -1,0 +1,16 @@
+# npm
+/node_modules/
+npm-debug.log
+
+# bower
+/www/bower/
+
+# local config
+/config.json
+
+# css
+/www/css/
+
+# icons
+/www/gfx/icon/
+/www/gfx/svg-min/

@@ -1,0 +1,29 @@
+p {
+    margin-bottom: 20px;
+}
+
+strong {
+    .font-bold();
+    color: @gray-dark;
+}
+
+mark {
+    padding: 0;
+    .font-normal();
+    background-color: @brand-primary;
+    color: #fff;
+}
+
+.big {
+    font-size: @font-size-large;
+}
+
+.lead {
+    margin-bottom: 40px;
+    font-size: 18px;
+
+    @media (min-width: @screen-sm-min) {
+        margin-bottom: 60px;
+        font-size: 21px;
+    }
+}

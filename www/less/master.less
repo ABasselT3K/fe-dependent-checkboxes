@@ -1,0 +1,498 @@
+/**
+ * Master page
+ *
+ * markup:
+ * <h1>First level heading</h1>
+ * <h2>Second level heading</h2>
+ * <h3>Third level heading</h3>
+ * <h4>Fourth level heading</h4>
+ * <h5>Fifth level heading</h5>
+ * <h6>Sixth level heading</h6>
+ * <div class="h1">Fake first level heading</div>
+ * <div class="h2">Fake second level heading</div>
+ * <div class="h3">Fake third level heading</div>
+ * <div class="h4">Fake fourth level heading</div>
+ * <div class="h5">Fake fifth level heading</div>
+ * <div class="h6">Fake sixth level heading</div>
+ * <hr>
+ * <h2>Paragraphs and links</h2>
+ * <p>
+ *     Lorem
+ *     <a href="http://www.google.com">google</a>
+ *     adipiscing. Quisque ipsum Maecenas Vivamus. <strong>Cursus Curabitur a ridiculus</strong>
+ *     libero <em>pellentesque sem est tempor</em>
+ *     id pellentesque. Tristique ante wisi aliquet consequat orci Praesent consequat tellus platea nibh. Curabitur parturient dui at sed neque enim Nam Sed justo vitae. Urna Curabitur porta mattis interdum Curabitur auctor tortor convallis.
+ * </p>
+ * <p>
+ *     Lorem
+ *     <a href="http://www.google.com">google</a>
+ *     adipiscing ipsum Maecenas Vivamus. <strong>Cursus Curabitur a ridiculus</strong>
+ *     libero <em>pellentesque sem est tempor</em>
+ *     id pellentesque. Tristique ante wisi aliquet consequat orci Praesent consequat tellus platea nibh. Curabitur parturient dui at sed neque enim Nam Sed justo vitae. Urna Curabitur porta mattis interdum Curabitur auctor tortor convallis.
+ * </p>
+ * <hr>
+ * <h2>Lists</h2>
+ * <h3>Unordered list</h3>
+ * <ul>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *         <ul>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                 <ul>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                 </ul>
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *         </ul>
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ * </ul>
+ * <h3>Ordered list</h3>
+ * <ol>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *         <ol>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                 <ol>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                     <li>
+ *                         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *                     </li>
+ *                 </ol>
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *         </ol>
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ * </ol>
+ * <h4>Unstyled list</h4>
+ * <ul class="list-unstyled">
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *         <ul>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *             <li>
+ *                 Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *             </li>
+ *         </ul>
+ *     </li>
+ *     <li>
+ *         Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.
+ *     </li>
+ * </ul>
+ * <h4>Inline list</h4>
+ * <ul class="list-inline">
+ *     <li>
+ *         Pellentesque morbi.
+ *     </li>
+ *     <li>
+ *         Sed sed mauris
+ *     </li>
+ *     <li>
+ *         Facilisi eros tortor.
+ *     </li>
+ * </ul>
+ * <h3>Definition list</h3>
+ * <dl>
+ *     <dt>7.&nbsp;5.&nbsp;2009</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ *     <dt>14. 7. 2009</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ *     <dt>29. 12. 2010</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ * </dl>
+ * <h4>Horizontal definition list</h4>
+ * <dl class="dl-horizontal">
+ *     <dt>7.&nbsp;5.&nbsp;2009</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ *     <dt>14. 7. 2009 long definition long definition</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ *     <dt>29. 12. 2010</dt>
+ *         <dd>Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium. Sed sed mauris nibh nibh tellus facilisi eros tortor aliquet aliquet. Pellentesque morbi tempor Nunc vitae pretium.</dd>
+ * </dl>
+ * <hr>
+ * <h2>Tables</h2>
+ * <h3>Basic table</h3>
+ * <table class="table">
+ *     <tbody>
+ *         <tr>
+ *             <th>0</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>1</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>2</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>3</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *     </tbody>
+ * </table>
+ * <h3>Full table</h3>
+ * <table class="table">
+ *     <thead>
+ *         <tr>
+ *             <th>mauris</th>
+ *             <th>facilisi</th>
+ *             <th>aliquet</th>
+ *             <th>pellentesque</th>
+ *         </tr>
+ *     </thead>
+ *     <tfoot>
+ *         <tr>
+ *             <th>Aurius</th>
+ *             <td colspan="3">4</td>
+ *         </tr>
+ *     </tfoot>
+ *     <tbody>
+ *         <tr>
+ *             <th>0</th>
+ *             <td>
+ *                 Wisi hendrerit nibh pretium laoreet sodales id facilisi et ac laoreet.
+ *             </td>
+ *             <td>
+ *                 Egestas Nullam convallis Fusce Nulla leo dictum tellus Cras felis massa.
+ *             </td>
+ *             <td>Nibh Sed enim.</td>
+ *         </tr>
+ *         <tr>
+ *             <th>1</th>
+ *             <td>
+ *                 Wisi hendrerit nibh pretium laoreet sodales id facilisi et ac laoreet.
+ *             </td>
+ *             <td>Wisi</td>
+ *             <td>
+ *                 Wisi hendrerit nibh pretium laoreet sodales id facilisi et ac laoreet.
+ *             </td>
+ *         </tr>
+ *     </tbody>
+ * </table>
+ * <h4>Striped table</h4>
+ * <table class="table table-striped">
+ *     <thead>
+ *         <tr>
+ *             <th>mauris</th>
+ *             <th>facilisi</th>
+ *             <th>aliquet</th>
+ *             <th>pellentesque</th>
+ *         </tr>
+ *     </thead>
+ *     <tfoot>
+ *         <tr>
+ *             <th>Aurius</th>
+ *             <td colspan="3">4</td>
+ *         </tr>
+ *     </tfoot>
+ *     <tbody>
+ *         <tr>
+ *             <th>0</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>1</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>2</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>3</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *     </tbody>
+ * </table>
+ * <h4>Bordered table with mouseover</h4>
+ * <table class="table table-bordered table-hover">
+ *     <thead>
+ *         <tr>
+ *             <th>mauris</th>
+ *             <th>facilisi</th>
+ *             <th>aliquet</th>
+ *             <th>pellentesque</th>
+ *         </tr>
+ *     </thead>
+ *     <tfoot>
+ *         <tr>
+ *             <th>Aurius</th>
+ *             <td colspan="3">4</td>
+ *         </tr>
+ *     </tfoot>
+ *     <tbody>
+ *         <tr>
+ *             <th>0</th>
+ *             <td>maurisus</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>1</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>2</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *         <tr>
+ *             <th>3</th>
+ *             <td>mauris</td>
+ *             <td>tellus</td>
+ *             <td>morbi</td>
+ *         </tr>
+ *     </tbody>
+ * </table>
+ * <hr>
+ * <h2>Form</h2>
+ * <h3>Basic example</h3>
+ * <form role="form">
+ *     <div class="form-group">
+ *         <label for="exampleInputEmail1">Email address</label>
+ *         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"></div>
+ *     <div class="form-group">
+ *         <label for="exampleInputPassword1">Password</label>
+ *         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></div>
+ *     <div class="form-group">
+ *         <label for="exampleInputFile">File input</label>
+ *         <input type="file" id="exampleInputFile">
+ *         <p class="help-block">Example block-level help text here.</p>
+ *     </div>
+ *     <div class="checkbox">
+ *         <label>
+ *             <input type="checkbox">Check me out
+ *         </label>
+ *     </div>
+ *     <button type="submit" class="btn btn-default">Submit</button>
+ * </form>
+ * <h3>Inline form</h3>
+ * <form class="form-inline" role="form">
+ *     <div class="form-group">
+ *         <label class="sr-only" for="exampleInputEmail2">Email address</label>
+ *         <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email"></div>
+ *     <div class="form-group">
+ *         <label class="sr-only" for="exampleInputPassword2">Password</label>
+ *         <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"></div>
+ *     <div class="checkbox">
+ *         <label>
+ *             <input type="checkbox">
+ *             Remember me
+ *         </label>
+ *     </div>
+ *     <button type="submit" class="btn btn-default">Sign in</button>
+ * </form>
+ * <h3>Horizontal form</h3>
+ * <form class="form-horizontal" role="form">
+ *     <div class="form-group">
+ *         <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+ *         <div class="col-lg-10">
+ *             <input type="email" class="form-control" id="inputEmail1" placeholder="Email"></div>
+ *     </div>
+ *     <div class="form-group">
+ *         <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+ *         <div class="col-lg-10">
+ *             <input type="password" class="form-control" id="inputPassword1" placeholder="Password"></div>
+ *     </div>
+ *     <div class="form-group">
+ *         <div class="col-lg-offset-2 col-lg-10">
+ *             <div class="checkbox">
+ *                 <label>
+ *                     <input type="checkbox">Remember me
+ *                 </label>
+ *             </div>
+ *         </div>
+ *     </div>
+ *     <div class="form-group">
+ *         <div class="col-lg-offset-2 col-lg-10">
+ *             <button type="submit" class="btn btn-default">Sign in</button>
+ *         </div>
+ *     </div>
+ * </form>
+ * <h3>Supported controls</h3>
+ * <h4>Text input</h4>
+ * <input type="text" class="form-control" placeholder="Text input">
+ * <h4>Textarea</h4>
+ * <textarea class="form-control" rows="3"></textarea>
+ * <h4>Checkboxes and radios</h4>
+ * <div class="checkbox">
+ *     <label>
+ *         <input type="checkbox" value="">
+ *         Option one is this and that&mdash;be sure to include why it's great
+ *     </label>
+ * </div>
+ * <div class="radio">
+ *     <label>
+ *         <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+ *         Option one is this and that&mdash;be sure to include why it's great
+ *     </label>
+ * </div>
+ * <div class="radio">
+ *     <label>
+ *         <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+ *         Option two can be something else and selecting it will deselect option one
+ *     </label>
+ * </div>
+ * <h5>Inline checkboxes</h5>
+ * <label class="checkbox-inline">
+ *     <input type="checkbox" id="inlineCheckbox1" value="option1">
+ *     1
+ * </label>
+ * <label class="checkbox-inline">
+ *     <input type="checkbox" id="inlineCheckbox2" value="option2">
+ *     2
+ * </label>
+ * <label class="checkbox-inline">
+ *     <input type="checkbox" id="inlineCheckbox3" value="option3">
+ *     3
+ * </label>
+ * <h4>Selects</h4>
+ * <p>Use the default option, or add <code>multiple</code> to show multiple options at once.</p>
+ * <select class="form-control">
+ *     <option>1</option>
+ *     <option>2</option>
+ *     <option>3</option>
+ *     <option>4</option>
+ *     <option>5</option>
+ * </select>
+ * <select multiple class="form-control">
+ *     <option>1</option>
+ *     <option>2</option>
+ *     <option>3</option>
+ *     <option>4</option>
+ *     <option>5</option>
+ * </select>
+ * <h4>Static control</h4>
+ * <p>When you need to place plain text next to a form label within a horizontal form, use the .form-control-static class on a &lt;p&gt;.</p>
+ * <form class="form-horizontal" role="form">
+ *     <div class="form-group">
+ *         <label class="col-lg-2 control-label">Email</label>
+ *         <div class="col-lg-10">
+ *             <p class="form-control-static">email@example.com</p>
+ *         </div>
+ *     </div>
+ *     <div class="form-group">
+ *         <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+ *         <div class="col-lg-10">
+ *             <input type="password" class="form-control" id="inputPassword" placeholder="Password"></div>
+ *     </div>
+ * </form>
+ * <h4>Disabled inputs</h4>
+ * <p>Add the disabled attribute on an input to prevent user input and trigger a slightly different look.</p>
+ * <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+ * <h3>Validation states</h3>
+ * <p>Bootstrap includes validation styles for error, warning, and success states on form controls. To use, add <code>.has-warning</code>, <code>.has-error</code>, or <code>.has-success</code> to the parent element. Any <code>.control-label</code>, <code>.form-control</code>, and <code>.help-block</code> within that element will receive the validation styles.</p>
+ * <div class="form-group has-success row">
+ *     <div class="col-sm-8">
+ *         <input type="text" class="form-control" id="inputSuccess">
+ *     </div>
+ *     <div class="col-sm-4">
+ *         <label class="control-label" for="inputSuccess"><span class="gicon ok_2"></span> Input with success</label>
+ *     </div>
+ * </div>
+ * <div class="form-group has-warning row">
+ *     <div class="col-sm-8">
+ *         <input type="text" class="form-control" id="inputWarning">
+ *     </div>
+ *     <div class="col-sm-4">
+ *         <label class="control-label" for="inputWarning"><span class="gicon warning_sign"></span> Input with warning</label>
+ *     </div>
+ * </div>
+ * <div class="form-group has-error row">
+ *     <div class="col-sm-8">
+ *         <input type="text" class="form-control" id="inputError">
+ *     </div>
+ *     <div class="col-sm-4">
+ *         <label class="control-label" for="inputError"><span class="gicon remove_2"></span> Input with error</label>
+ *     </div>
+ * </div>
+ * <h3>Help text</h3>
+ * <form role="form">
+ *     <div class="form-group">
+ *         <label for="exampleInputEmail1">Email address</label>
+ *         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+ *         <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+ *     </div>
+ * </form>
+ * <h2>Buttons</h2>
+ * <button type="button" class="btn">Default</button>
+ * <button type="button" class="btn btn-secondary">Secondary</button>
+ * <button type="button" class="btn btn-link">Link</button>
+ * <h3>Disabled state</h3>
+ * <button type="button" class="btn" disabled="disabled">Default button</button>
+ * <button type="button" class="btn btn-secondary" disabled="disabled">Secondary button</button>
+ * <a href="#" class="btn disabled">Default link</a>
+ * <a href="#" class="btn btn-secondary disabled">Secondary link</a>
+ * <h3>Button tags</h3>
+ * <a class="btn" href="#">Link</a>
+ * <button class="btn" type="submit">Button</button>
+ * <input class="btn" type="button" value="Input">
+ * <input class="btn" type="submit" value="Submit">
+ *
+ * Styleguide 2.0
+ */

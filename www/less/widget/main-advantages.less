@@ -1,0 +1,60 @@
+/**
+ * Main advantages
+ *
+ * markup:
+ * <div class="main-advantages widget">
+        <div class="container">
+            <div class="widget-container">
+                <div class="row">
+                    <div class="item col-sm-4">
+                        <img src="http://satyr.io/124x100">
+                        <h3>jistota</h3>
+                        garantované sazby i pro další období platnosti úrokové sazby
+                    </div>
+                    <div class="item col-sm-4">
+                        <img src="http://satyr.io/124x100">
+                        <h3>bez faktur</h3>
+                        při čerpání úvěru na výstavbu a rekonstrukci nemovitosti
+                    </div>
+                    <div class="item col-sm-4">
+                        <img src="http://satyr.io/124x100">
+                        <h3>bez poplatku</h3>
+                        za čerpání úvěru a rezervaci úvěrových zdrojů
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ *
+ * Styleguide 2.12
+ */
+.main-advantages {
+    .widget-container {
+        .item {
+            padding-top: 20px;
+            padding-bottom: 40px;
+
+            img {
+                display: block;
+                width: 62px;
+                height: 50px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .widget-container {
+            padding-bottom: 35px;
+
+            .item {
+                padding-top: 0;
+
+                img {
+                    width: 124px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

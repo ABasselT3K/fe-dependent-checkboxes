@@ -1,2 +1,3 @@
-# fe-dependent-checkboxes
-Frontend excercise
+# Frontend test
+
+FE playground

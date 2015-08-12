@@ -1,0 +1,154 @@
+.search {
+    position: absolute;
+    top: @header-height-mobile;
+    z-index: 11;
+    display: none;
+    padding: 5px;
+    background: #e6e6e6;
+
+    .search-open & {
+        display: block;
+    }
+
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    @media (max-width: @screen-sm-max) {
+        .btn {
+            width: auto;
+        }
+
+        .input-group {
+            position: relative;
+            display: table;
+            border-collapse: separate;
+        }
+
+        .form-control {
+            position: relative;
+            display: table-cell;
+            float: none;
+            margin-bottom: 0;
+            width: 100%;
+            border-top: 1px solid @footer-bg-dark;
+            border-left: 1px solid @footer-bg-dark;
+            border-bottom: 1px solid @footer-bg-dark;
+            border-right: 1px solid #fff;
+        }
+
+        .input-group-btn {
+            position: relative;
+            display: table-cell;
+            font-size: 0;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .btn-search {
+            // margin-right: -1px; // FIX for FF + Chrome, IE still have 1px gap
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: @brand-primary;
+            color: #fff;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        top: 78px;
+        left: 0;
+        padding: 5px 0;
+
+        .container {
+            padding-left: @gutter / 2;
+            padding-right: @gutter / 2;
+        }
+
+        .cancel {
+            background: transparent;
+            border: 0;
+
+            path {
+                fill: @brand-primary;
+            }
+        }
+    }
+
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        .input-group {
+            box-shadow: none;
+
+            .form-control {
+                height: 38px;
+            }
+
+            .input-group-btn {
+                .btn-search {
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    background: @brand-primary;
+                    color: #fff;
+                }
+
+                &:hover,
+                &:focus {
+                    z-index: 0;
+                }
+            }
+        }
+    }
+
+    @media (min-width: @screen-md-min) {
+        display: block;
+        padding: 0;
+        margin-top: 0;
+        top: @gutter;
+
+        .input-group {
+            position: absolute;
+            top: 3px;
+            right: 300px;
+            z-index: 3;
+
+            .form-control {
+                position: relative;
+                z-index: 2;
+                float: left;
+                display: table-cell;
+                width: 172px;
+                height: 31px;
+                line-height: 31px;
+                border: 1px solid @gray-border;
+                border-top: 1px solid @footer-bg-dark;
+                border-left: 1px solid @footer-bg-dark;
+                border-bottom: 1px solid @footer-bg-dark;
+            }
+
+            .input-group-btn {
+                position: relative;
+                font-size: 0;
+                white-space: nowrap;
+                display: table-cell;
+                float: right;
+                vertical-align: middle;
+                width: auto;
+
+                .btn-search {
+                    margin-left: 0;
+                    padding: 0 8px;
+                    background: #fff;
+                    color: #fff;
+
+                    .icon {
+                        svg {
+                            padding-top: 2px; // FIX: icon is not exactly vertically centered by default
+                            width: 20px;
+                            height: 34px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

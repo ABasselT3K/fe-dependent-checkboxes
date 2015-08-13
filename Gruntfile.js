@@ -83,20 +83,6 @@ module.exports = function(grunt) {
             },
         },
 
-        esteWatch: {
-            options: {
-                dirs: [
-                    '<%= js %>/',
-                    '<%= test %>/**/'
-                ],
-                livereload: {
-                    enabled: false
-                }
-            },
-            html: 'jsdev',
-            js: 'jsdev'
-        },
-
         watch: {
             gruntfile: {
                 files: 'Gruntfile.js',
@@ -146,6 +132,5 @@ module.exports = function(grunt) {
     grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'test']);
     grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'test']);
     grunt.registerTask('test', ['mocha']);
-    grunt.registerTask('build', ['clean:build', 'css', 'js']);
 
 };

@@ -1,10 +1,10 @@
 var DependentCheckboxes = function(container) {
     this.container = container;
 
-    $(document)
+    this.container
         .on('change', ':checkbox.check-all', this.handleCheckAllChange.bind(this))
-        .on('change', ':checkbox[data-group]', this.handleGroupLeaderChange.bind(this))
-        // .on('change', ':checkbox[data-category]', this.handleGroupMemberChange.bind(this))
+        .on('change', ':checkbox[data-group]', this.handleCheckGroupChange.bind(this))
+        .on('change', ':checkbox', this.handleCheckboxChange.bind(this))
     ;
 };
 
@@ -14,16 +14,32 @@ DependentCheckboxes.prototype = {
         $(':checkbox').prop('checked', e.currentTarget.checked);
     },
 
-    handleGroupLeaderChange: function(e) {
+    handleCheckGroupChange: function(e) {
         var checkbox = e.currentTarget;
         $(':checkbox[data-category="'+ checkbox.getAttribute('data-group') +'"]').prop('checked', checkbox.checked);
     },
 
-    // handleGroupMemberChange: function(e) {
-    //     var siblings = $(e.currentTarget).closest('ul').find(':checkbox');
-    // }
+    handleCheckboxChange: function(e) {
+        'use strict';
 
-    // Todo sanitize group
+        var groups = this.container.find('.column');
+        var allGroupsChecked = true;
 
-    // Todo sanitize all
+        for (let i = 0; i < groups.length; i++) {
+            let group = $(groups[i]);
+            let checkboxes = group.find('ul :checkbox');
+            let allChecked = true;
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (!checkboxes[i].checked) {
+                    allGroupsChecked = allChecked = false;
+                    continue;
+                }
+            }
+
+            group.find(':checkbox[data-group]').prop('checked', allChecked);
+        }
+
+        this.container.find(':checkbox.check-all').prop('checked', allGroupsChecked);
+    }
 };

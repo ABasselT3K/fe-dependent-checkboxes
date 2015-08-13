@@ -14,3 +14,6 @@ npm-debug.log
 # icons
 /www/gfx/icon/
 /www/gfx/svg-min/
+
+#
+*.sublime-*

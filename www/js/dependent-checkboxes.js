@@ -3,12 +3,10 @@ var DependentCheckboxes = function(container) {
     this.masterSwitch = this.container.find('.check-all');
     this.checkboxes = this.container.find('input[type="checkbox"]').not(this.masterSwitch);
 
-	// this.checkboxes.on('change', this.fireEvent.bind(this));
 	this.container.on('change', 'input[type="checkbox"]', this.fireEvent.bind(this));
 };
 
 DependentCheckboxes.prototype.fireEvent = function(e) {
-	var current = $(e.currentTarget);
 	var data = $(e.currentTarget).data();
 	if (Object.getOwnPropertyNames(data).length) {
 		if (data.group) {

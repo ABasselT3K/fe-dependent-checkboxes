@@ -146,6 +146,6 @@ module.exports = function(grunt) {
     grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'test']);
     grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'test']);
     grunt.registerTask('test', ['mocha']);
-    grunt.registerTask('build', ['clean:build', 'css', 'js']);
+    grunt.registerTask('build', ['js']);
 
 };

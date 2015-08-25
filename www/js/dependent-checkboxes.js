@@ -4,8 +4,7 @@ var DependentCheckboxes = function(container) {
     this.container
         .on('change', ':checkbox.check-all', this.handleCheckAllChange.bind(this))
         .on('change', ':checkbox[data-group]', this.handleCheckGroupChange.bind(this))
-        .on('change', ':checkbox', this.handleCheckboxChange.bind(this))
-    ;
+        .on('change', ':checkbox', this.handleCheckboxChange.bind(this));
 };
 
 DependentCheckboxes.prototype.handleCheckAllChange = function(e) {

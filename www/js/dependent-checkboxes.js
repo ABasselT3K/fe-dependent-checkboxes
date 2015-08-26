@@ -11,7 +11,7 @@ DependentCheckboxes.prototype.handleClickCategory = function(e) {
     var itemsInCat = '[data-category=' + cat + ']';
     var parent = $('[data-group="' + cat + '"]');
 
-    if ($(itemsInCat).length === $(itemsInCat + ':checked').length) {
+    if (this.isCheckedAll(itemsInCat)) {
         parent.prop('checked', true);
     } else {
         parent.prop('checked', false);
@@ -24,7 +24,7 @@ DependentCheckboxes.prototype.handleClickGroup = function(e) {
     var cat = $(e.currentTarget).data('group');
     var itemsInCat = '[data-category=' + cat + ']';
 
-    if ($(itemsInCat).length === $(itemsInCat + ':checked').length) {
+    if (this.isCheckedAll(itemsInCat)) {
         $(itemsInCat).prop('checked', false);
     } else {
         $(itemsInCat).prop('checked', true);
@@ -35,8 +35,9 @@ DependentCheckboxes.prototype.handleClickGroup = function(e) {
 
 DependentCheckboxes.prototype.handleClickAll = function() {
     var input = $('input');
+    var groups = '[data-group]';
 
-    if (input.last().prop('checked')) {
+    if (this.isCheckedAll(groups)) {
         input.prop('checked', false);
     } else {
         input.prop('checked', true);
@@ -47,9 +48,13 @@ DependentCheckboxes.prototype.checkAll = function() {
     var groups = '[data-group]';
     var all = $('.check-all');
 
-    if ($(groups).length === $(groups + ':checked').length) {
+    if (this.isCheckedAll(groups)) {
         all.prop('checked', true);
     } else {
         all.prop('checked', false);
     }
+};
+
+DependentCheckboxes.prototype.isCheckedAll = function(selector) {
+    return $(selector).length === $(selector + ':checked').length;
 };

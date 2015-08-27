@@ -1,75 +1,62 @@
 var DependentCheckboxes = function(container) {
     this.container = $(container);
-    this.checkboxes = this.container.find('input[type="checkbox"]');
-    this.checkgroup = this.container.find('[data-group]');
-    this.checkmaster = this.container.find('.check-all');
+    this.allCheckboxes = this.container.find(':checkbox');
+    this.allGroups = this.allCheckboxes.filter('[data-group]');
+    this.checkAllCheckbox = this.container.find('.check-all');
 
-    this.checkmaster.on('click', $.proxy(this.CheckAll, this));
-    this.checkgroup.on('click', $.proxy(this.CheckGroup, this));
-    this.checkboxes.on('click', $.proxy(this.VerifiedGroup, this));
+    this.container.on('change', ':checkbox', $.proxy(this.handleCheck, this));
 };
 
-DependentCheckboxes.prototype.CheckAll = function(e) {
-    var statusOfMaster = $(this.checkmaster).is(':checked');
+DependentCheckboxes.prototype.handleCheck = function(e) {
+    var trigger = $(e.target);
 
-    if (statusOfMaster) {
-        this.checkboxes.prop('checked', true);
+    if (trigger.hasClass('check-all')) {
+        this.allCheckboxes.prop('checked', trigger.prop('checked'));
+    } else if (trigger.data('group')) {
+        this.handleGroup(trigger);
     } else {
-       this.checkboxes.prop('checked', false);
+        this.handleItem(trigger);
     }
 };
 
-DependentCheckboxes.prototype.CheckGroup = function(e) {
-    var statusOfGroup = $(e.target).is(':checked');
-    var group = $(e.target).data('group');
+DependentCheckboxes.prototype.handleGroup = function(trigger) {
+    var category = trigger.data('group');
 
-    if (statusOfGroup) {
-        this.container.find('[data-category="' + group + '"]').prop('checked', true);
-    } else {
-        this.container.find('[data-category="' + group + '"]').prop('checked', false);
-    }
+    this.allCheckboxes.filter('[data-category="' + category + '"]').prop('checked', trigger.prop('checked'));
 
-    this.VerifiedMaster();
+    this.checkGroups();
 };
 
-DependentCheckboxes.prototype.VerifiedGroup = function(e) {
-    var group = $(e.target).data('category');
-    var allCheckboxiesInGroup = this.container.find('[data-category="' + group + '"]');
-    var counter = 0;
+DependentCheckboxes.prototype.checkGroups = function() {
+    var areAllGroupsChecked = true;
 
-    for (var x = 0; x < allCheckboxiesInGroup.length; x++) {
-        if ($(allCheckboxiesInGroup[x]).is(':checked')) {
-            counter++;
+    this.allGroups.each(function() {
+        if (!$(this).prop('checked')) {
+            areAllGroupsChecked = false;
+            return false;
         }
-    }
+    });
 
-    if (counter === allCheckboxiesInGroup.length) {
-        this.container.find('[data-group="' + group + '"]').prop('checked', true);
-    } else {
-        this.container.find('[data-group="' + group + '"]').prop('checked', false);
-    }
-
-    this.VerifiedMaster();
+    this.checkAllCheckbox.prop('checked', areAllGroupsChecked);
 };
 
-DependentCheckboxes.prototype.VerifiedMaster = function() {
-    var counter = 0;
+DependentCheckboxes.prototype.handleItem = function(trigger) {
+    var category = trigger.data('category');
 
-    for (var x = 0; x < this.checkgroup.length; x++) {
-        if ($(this.checkgroup[x]).is(':checked')) {
-            counter++;
+    this.checkCategory(category);
+    this.checkGroups();
+};
+
+DependentCheckboxes.prototype.checkCategory = function(category) {
+    var areAllInCategoryChecked = true;
+    var categoryCheckboxes = this.allCheckboxes.filter('[data-category="' + category + '"]');
+
+    categoryCheckboxes.each(function() {
+        if (!$(this).prop('checked')) {
+            areAllInCategoryChecked = false;
+            return false;
         }
-    }
+    });
 
-    if (counter === this.checkgroup.length) {
-        this.container.find('.check-all').prop('checked', true);
-    } else {
-        this.container.find('.check-all').prop('checked', false);
-    }
+    this.allCheckboxes.filter('[data-group="' + category + '"]').prop('checked', areAllInCategoryChecked);
 };
-
-/*function CheckAll(myObject) {
-console.log("adfgalkdjgalkdflkfgh");
-}*/
-
-

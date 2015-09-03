@@ -22,7 +22,7 @@ DependentCheckboxes.prototype.handleCheck = function(e) {
 DependentCheckboxes.prototype.handleGroup = function(trigger) {
     var category = trigger.data('group');
 
-    this.allCheckboxes.filter('[data-category="' + category + '"]').prop('checked', trigger.prop('checked'));
+    this.allCheckboxes.filter('input[data-category="' + category + '"]').prop('checked', trigger.prop('checked'));
 
     this.checkGroups();
 };
@@ -49,7 +49,7 @@ DependentCheckboxes.prototype.handleItem = function(trigger) {
 
 DependentCheckboxes.prototype.checkCategory = function(category) {
     var areAllInCategoryChecked = true;
-    var categoryCheckboxes = this.allCheckboxes.filter('[data-category="' + category + '"]');
+    var categoryCheckboxes = this.allCheckboxes.filter('input[data-category="' + category + '"]');
 
     categoryCheckboxes.each(function() {
         if (!$(this).prop('checked')) {
@@ -58,5 +58,5 @@ DependentCheckboxes.prototype.checkCategory = function(category) {
         }
     });
 
-    this.allCheckboxes.filter('[data-group="' + category + '"]').prop('checked', areAllInCategoryChecked);
+    this.allCheckboxes.filter('input[data-group="' + category + '"]').prop('checked', areAllInCategoryChecked);
 };

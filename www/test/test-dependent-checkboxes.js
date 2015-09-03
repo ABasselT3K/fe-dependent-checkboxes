@@ -96,5 +96,5 @@ describe('DependentCheckboxes', function() {
                 group3.prop('checked').should.equal(false);
             });
         });
-    })
+    });
 });

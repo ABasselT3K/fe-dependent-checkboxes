@@ -8,24 +8,18 @@ var DependentCheckboxes = function(container) {
 };
 
 DependentCheckboxes.prototype.handleCheckboxChange = function(e) {
-    var checkAll = e.target.className === 'check-all';
-    var group = e.target.getAttribute('data-group'); // dataset is slower than getAttribute - http://jsperf.com/dataset-vs-getattribute-and-setattribute/3
-    var category = e.target.getAttribute('data-category');
-    var isChecked = e.target.checked;
+    var current = e.target;
+    var checkAll = current.className === 'check-all';
+    var group = current.getAttribute('data-group'); // dataset is slower than getAttribute - http://jsperf.com/dataset-vs-getattribute-and-setattribute/3
+    var category = current.getAttribute('data-category');
+    var isChecked = current.checked;
 
     if (checkAll) {
         this.handleClickCheckAll(isChecked);
-        return;
-    }
-
-    if (group) {
+    } else if (group) {
         this.handleClickCheckGroup(isChecked, group);
-        return;
-    }
-
-    if (category) {
+    } else {
         this.handleClickCheckCategory(category);
-        return;
     }
 };
 

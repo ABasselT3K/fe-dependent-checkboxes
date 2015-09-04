@@ -1,12 +1,13 @@
 var DependentCheckboxes = function(container) {
     this.container = $(container);
-    this.checkboxes = this.container.find('input[type="checkbox"]');
+    this.checkboxes = this.container.find(':checkbox');
     this.btnCheckAll = this.container.find('.check-all');
     this.btnCheckCategory = this.container.find('[data-group]');
 
-    this.btnCheckAll.on('change', $.proxy(this.handleClickCheckAll, this));
-    this.btnCheckCategory.on('change', $.proxy(this.handleClickCheckCategory, this));
-    this.checkboxes.on('change', $.proxy(this.handleClickCheckboxes, this));
+    this.container
+        .on('change', '.check-all', $.proxy(this.handleClickCheckAll, this))
+        .on('change', ':checkbox[data-group]', $.proxy(this.handleClickCheckCategory, this))
+        .on('change', ':checkbox', $.proxy(this.handleClickCheckboxes, this));
 };
 
 DependentCheckboxes.prototype.handleClickCheckAll = function(e) {
@@ -34,7 +35,7 @@ DependentCheckboxes.prototype.handleClickCheckCategory = function(e) {
 };
 
 DependentCheckboxes.prototype.checkCategory = function(category, bool) {
-    this.checkboxes.filter(('[data-category="' + category + '"]')).prop('checked', bool);
+    this.checkboxes.filter('[data-category="' + category + '"]').prop('checked', bool);
 };
 
 DependentCheckboxes.prototype.watchCategories = function() {
@@ -51,7 +52,7 @@ DependentCheckboxes.prototype.watchCategories = function() {
 DependentCheckboxes.prototype.handleClickCheckboxes = function(e) {
     this.category = $(e.target).data('category');
 
-    var siblings = this.checkboxes.filter(('[data-category="' + this.category + '"]'));
+    var siblings = this.checkboxes.filter('[data-category="' + this.category + '"]');
     var siblingsTotal = siblings.length;
     var siblingsChecked = siblings.filter(':checked').length;
 

@@ -2,6 +2,7 @@
   "name": "basic-project",
   "version": "0.0.0-ignored",
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "bind-polyfill": "~1.0.0"
   }
 }

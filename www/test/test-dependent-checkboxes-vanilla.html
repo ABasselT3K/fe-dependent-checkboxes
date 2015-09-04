@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mocha Tests</title>
+        <link rel="stylesheet" href="mocha.css">
+    </head>
+    <body>
+        <div id="mocha"></div>
+        <script src="mocha.js"></script>
+        <script src="chai.js"></script>
+
+        <script>
+            mocha.setup('bdd')
+            mocha.reporter('html');
+        </script>
+
+        <div id="dependent-checkboxes">
+            <h1>Dependent Checkboxes</h1>
+
+            <p><label class="checkbox"><input type="checkbox" class="check-all"> Check all</label></p>
+            <div class="column">
+                <label class="checkbox"><input type="checkbox" data-group="cat1"> Category 1</label>
+                <ul>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat1"> Item</label></li>
+                </ul>
+            </div>
+            <div class="column">
+                <label class="checkbox"><input type="checkbox" data-group="cat2"> Category 2</label>
+                <ul>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat2"> Item</label></li>
+                </ul>
+            </div>
+            <div class="column">
+                <label class="checkbox"><input type="checkbox" data-group="cat3"> Category 3</label>
+                <ul>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                    <li><label class="checkbox"><input type="checkbox" data-category="cat3"> Item</label></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="../bower/jquery/dist/jquery.js"></script>
+        <script src="../bower/bind-polyfill/index.js"></script>
+        <script src="../js/dependent-checkboxes-vanilla.js"></script>
+        <script>
+            var checkboxesContainer = document.getElementById('dependent-checkboxes');
+            var dependentCheckboxes = new DependentCheckboxes(checkboxesContainer);
+        </script>
+
+        <!-- Tests -->
+        <script src="test-dependent-checkboxes.js"></script>
+
+        <script>
+            // Only tests run in real browser, injected script run if options.run == true
+            if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+                mocha.run();
+            }
+        </script>
+    </body>
+</html>

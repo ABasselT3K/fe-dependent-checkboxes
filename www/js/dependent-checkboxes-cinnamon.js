@@ -1,55 +1,69 @@
+/**
+ * @param {HTMLElement} container
+ */
 var DependentCheckboxes = function(container) {
     this.container = container;
+    this.checkboxCheckAll = this.container.querySelector('input.check-all');
+
     this.container.addEventListener('change', this.handleChange.bind(this));
 };
 
+/**
+ * @param {Event} e
+ */
 DependentCheckboxes.prototype.handleChange = function(e) {
     var checkbox = e.target;
 
     if (checkbox.classList.contains('check-all')) {
-        this.handleCheckAllChange(e);
+        this.handleCheckAllChange(checkbox);
     } else if (checkbox.getAttribute('data-group')) {
-        this.handleCheckGroupChange(e);
+        this.handleCheckGroupChange(checkbox);
     }
 
     this.handleCheckboxChange();
 };
 
-DependentCheckboxes.prototype.handleCheckAllChange = function(e) {
-    this.setChecked('input[type="checkbox"]', e.target.checked);
+/**
+ * @param {HTMLInputElement} checkbox
+ */
+DependentCheckboxes.prototype.handleCheckAllChange = function(checkbox) {
+    this.setChecked(this.container.querySelectorAll('input[type="checkbox"]'), checkbox.checked);
 };
 
-DependentCheckboxes.prototype.handleCheckGroupChange = function(e) {
-    var checkbox = e.target;
-    this.setChecked('input[data-category="' + checkbox.getAttribute('data-group') + '"]', checkbox.checked);
+/**
+ * @param {HTMLInputElement} checkbox
+ */
+DependentCheckboxes.prototype.handleCheckGroupChange = function(checkbox) {
+    this.setChecked(this.container.querySelectorAll('input[data-category="' + checkbox.getAttribute('data-group') + '"]'), checkbox.checked);
 };
 
 DependentCheckboxes.prototype.handleCheckboxChange = function() {
+    var groups = this.container.querySelectorAll('.column');
     var allGroupsChecked = true;
 
-    [].forEach.call(this.container.querySelectorAll('.column'), function(group) {
-        var checkboxes = group.querySelectorAll('ul input[type="checkbox"]');
+    for (var i = 0; i < groups.length; i++) {
+        var checkboxes = groups[i].querySelectorAll('ul input[type="checkbox"]');
         var allChecked = true;
 
-        for (var i = 0, count = checkboxes.length; i < count; i++) {
-            if (!checkboxes[i].checked) {
+        for (var j = 0; j < checkboxes.length; j++) {
+            if (!checkboxes[j].checked) {
                 allGroupsChecked = allChecked = false;
                 break;
             }
         }
 
-        // todo refactor those freaky loops
-        [].forEach.call(group.querySelectorAll('input[data-group]'), function(el) {
-            el.checked = allChecked;
-        });
-    });
+        this.setChecked(groups[i].querySelectorAll('input[data-group]'), allChecked);
+    }
 
-    this.container.querySelector('input.check-all').checked = allGroupsChecked;
+    this.checkboxCheckAll.checked = allGroupsChecked;
 };
 
-// Bad practice?
-DependentCheckboxes.prototype.setChecked = function(selector, checked) {
-    [].forEach.call(document.querySelectorAll(selector), function(el) {
-        el.checked = checked;
-    });
+/**
+ * @param {NodeList} checkbox
+ * @param {boolean} checked
+ */
+DependentCheckboxes.prototype.setChecked = function(checkboxes, checked) {
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = checked;
+    }
 };

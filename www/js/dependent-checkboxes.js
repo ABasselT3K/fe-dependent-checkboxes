@@ -4,9 +4,9 @@ var DependentCheckboxes = function(container) {
     this.checkgroup = this.container.find('[data-group]');
     this.checkmaster = this.container.find('.check-all');
 
-    this.checkmaster.on('click', $.proxy(this.CheckAll, this));
-    this.checkgroup.on('click', $.proxy(this.CheckGroup, this));
-    this.checkboxes.on('click', $.proxy(this.VerifiedGroup, this));
+    this.checkmaster.on('change', $.proxy(this.CheckAll, this));
+    this.checkgroup.on('change', $.proxy(this.CheckGroup, this));
+    this.checkboxes.on('change', $.proxy(this.VerifiedGroup, this));
 };
 
 DependentCheckboxes.prototype.CheckAll = function(e) {
@@ -67,9 +67,3 @@ DependentCheckboxes.prototype.VerifiedMaster = function() {
         this.container.find('.check-all').prop('checked', false);
     }
 };
-
-/*function CheckAll(myObject) {
-console.log("adfgalkdjgalkdflkfgh");
-}*/
-
-

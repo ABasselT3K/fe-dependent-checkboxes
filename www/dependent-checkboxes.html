@@ -59,10 +59,17 @@
             </div>
         </div>
 
-        <script src="bower/jquery/dist/jquery.js"></script>
+        <!--<script src="bower/jquery/dist/jquery.js"></script>
         <script src="js/dependent-checkboxes.js"></script>
         <script>
             var dependentCheckboxes = new DependentCheckboxes($('#dependent-checkboxes'));
+        </script>
+        -->
+
+        <script src="js/dependent-checkboxes-vanilla.js"></script>
+        <script>
+            var checkboxesContainer = document.getElementById('dependent-checkboxes');
+            var dependentCheckboxes = new DependentCheckboxes(checkboxesContainer);
         </script>
     </body>
 </html>

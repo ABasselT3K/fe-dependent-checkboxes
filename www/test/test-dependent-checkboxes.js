@@ -13,7 +13,7 @@ var checkbox1Cat1 = container.find('[data-category="cat1"]:first');
 var checkbox2Cat2 = container.find('[data-category="cat2"]:eq(1)');
 var checkbox3Cat3 = container.find('[data-category="cat3"]:eq(2)');
 
-describe('DependentCheckboxes', function() {
+describe('DependentCheckboxes:', function() {
     afterEach(function() {
         allCheckboxes.prop('checked', false);
     });
@@ -24,7 +24,7 @@ describe('DependentCheckboxes', function() {
         });
     });
 
-    describe('Check all checkbox', function() {
+    describe('Check all checkbox:', function() {
         describe('If "check all" checkbox is checked all checkboxes', function() {
             it('should be checked', function() {
                 checkAll.click();
@@ -60,7 +60,7 @@ describe('DependentCheckboxes', function() {
         });
     });
 
-    describe('Group checkboxes', function() {
+    describe('Group checkboxes:', function() {
         describe('If group checkbox is checked all checkboxes in category', function() {
             it('should be checked', function() {
                 group1.click();

@@ -1,4 +1,24 @@
 import React from 'react';
+class Dispatcher {
+    constructor() {
+        this.el = document.body;
+        console.log(this.el);
+        this.listen();
+    }
+
+    listen() {
+        this.el.addEventListener('dispatcher', e => {
+            console.log(e);
+        }, false);
+    }
+
+    dispatch(payload) {
+        var event = new CustomEvent('dispatcher', payload);
+        this.el.dispatchEvent(event);
+    }
+}
+
+var dispatcher = new Dispatcher();
 
 class DependentCheckboxes extends React.Component {
     constructor(props) {
@@ -66,8 +86,10 @@ class CheckAll extends React.Component {
 
 class Category extends React.Component {
     handleChange(index, e) {
-        console.log(React.findDOMNode(this));
-        var event = new CustomEvent('ITEM_CHANGE', { 'id': index });
+        dispatcher.dispatch({
+            type: 'CHANGE_ITEM',
+            id: index
+        });
     }
 
     render() {

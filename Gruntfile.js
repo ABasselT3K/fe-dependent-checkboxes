@@ -89,7 +89,9 @@ module.exports = function(grunt) {
         browserify: {
             build: {
                 options: {
-                    debug: true
+                    debug: true,
+                    sourceMap: true,
+                    transform: [ ['babelify'] ]
                 },
                 files: {
                     '<%= js %>/dependent-checkboxes-es2015.js': '<%= app %>/dependent-checkboxes-es2015.js'

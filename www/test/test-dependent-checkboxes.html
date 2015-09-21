@@ -10,6 +10,26 @@
         <script src="chai.js"></script>
 
         <script>
+            if (!Function.prototype.bind) {
+              Function.prototype.bind = function (oThis) {
+                if (typeof this !== "function") {
+                  // closest thing possible to the ECMAScript 5 internal IsCallable function
+                  throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+                }
+                var aArgs = Array.prototype.slice.call(arguments, 1),
+                    fToBind = this,
+                    fNOP = function () {},
+                    fBound = function () {
+                      return fToBind.apply(this instanceof fNOP && oThis
+                                             ? this
+                                             : oThis,
+                                           aArgs.concat(Array.prototype.slice.call(arguments)));
+                    };
+                fNOP.prototype = this.prototype;
+                fBound.prototype = new fNOP();
+                return fBound;
+              };
+            }
             mocha.setup('bdd')
             mocha.reporter('html');
         </script>
@@ -66,9 +86,10 @@
         </div>
 
         <script src="../bower/jquery/dist/jquery.js"></script>
-        <script src="../js/dependent-checkboxes.js"></script>
+        <script src="../js/babel/browser-polyfill.min.js"></script>
+        <script src="../js/dependent-checkboxes-es2015.js"></script>
         <script>
-            var dependentCheckboxes = new DependentCheckboxes($('#dependent-checkboxes'));
+            var dependentCheckboxes = new DependentCheckboxes(document.getElementById('dependent-checkboxes'));
         </script>
 
         <!-- Tests -->

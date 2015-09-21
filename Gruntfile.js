@@ -8,6 +8,7 @@ module.exports = function(grunt) {
         styles: 'www/less',
         css: 'www/css',
         js: 'www/js',
+        app: 'www/app',
         test: 'www/test',
 
         jshint: {
@@ -58,7 +59,8 @@ module.exports = function(grunt) {
             },
             production: {
                 src: [
-                    '<%= js %>/*.js'
+                    '<%= js %>/dependent-checkboxes.js',
+                    '<%= js %>/dependent-checkboxes-vanilla.js'
                 ]
             }
         },
@@ -73,6 +75,39 @@ module.exports = function(grunt) {
             ]
         },
 
+        /*babel: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    '<%= js %>/dependent-checkboxes-es2015.js': '<%= app %>/dependent-checkboxes-es2015.js'
+                }
+            }
+        },*/
+
+        browserify: {
+            build: {
+                options: {
+                    debug: true,
+                    sourceMap: true,
+                    transform: [ ['babelify'] ]
+                },
+                files: {
+                    '<%= js %>/dependent-checkboxes-es2015.js': '<%= app %>/dependent-checkboxes-es2015.js'
+                }
+            },
+            react: {
+                options: {
+                    debug: true,
+                    transform: [ ['babelify'] ]
+                },
+                files: {
+                    '<%= js %>/dependent-checkboxes-react.js': '<%= app %>/dependent-checkboxes-react.jsx'
+                }
+            }
+        },
+
         mocha: {
             test: {
                 options: {
@@ -83,31 +118,35 @@ module.exports = function(grunt) {
             },
         },
 
-        esteWatch: {
-            options: {
-                dirs: [
-                    '<%= js %>/',
-                    '<%= test %>/**/'
-                ],
-                livereload: {
-                    enabled: false
-                }
-            },
-            html: 'jsdev',
-            js: 'jsdev'
-        },
-
         watch: {
             gruntfile: {
                 files: 'Gruntfile.js',
                 tasks: ['jshint:gruntfile']
             },
-            js: {
+            jshint: {
                 files: [
-                    '<%= js %>/*.js',
+                    '<%= js %>/dependent-checkboxes.js',
+                    '<%= js %>/dependent-checkboxes-vanilla.js'
+                ],
+                tasks: ['jshint:dev']
+            },
+            browserify: {
+                files: [
+                    '<%= app %>/*.js'
+                ],
+                tasks: ['browserify:build']
+            },
+            react: {
+                files: [
+                    '<%= app %>/*.jsx'
+                ],
+                tasks: ['browserify:react']
+            },
+            jstest: {
+                files: [
                     '<%= test %>/*.js'
                 ],
-                tasks: ['jshint:dev', 'test']
+                tasks: ['test']
             },
             html: {
                 files: [
@@ -142,10 +181,10 @@ module.exports = function(grunt) {
 
     require('jit-grunt')(grunt);
 
-    grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'test']);
-    grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'test']);
+    grunt.registerTask('default', ['browserify', 'browserSync', 'watch']);
+    grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'browserify', 'test']);
+    grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'browserify', 'test']);
     grunt.registerTask('test', ['mocha']);
-    grunt.registerTask('build', ['clean:build', 'css', 'js']);
+    grunt.registerTask('build', ['js', 'test']);
 
 };

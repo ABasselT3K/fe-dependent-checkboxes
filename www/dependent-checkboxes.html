@@ -11,6 +11,8 @@
         <div id="dependent-checkboxes">
             <h1>Dependent Checkboxes</h1>
 
+            <div id="dependent-checkboxes-placeholder"></div>
+
             <p><label class="checkbox"><input type="checkbox" class="check-all"> Check all</label></p>
             <div class="column">
                 <label class="checkbox"><input type="checkbox" data-group="cat1"> Category 1</label>
@@ -59,10 +61,15 @@
             </div>
         </div>
 
-        <script src="bower/jquery/dist/jquery.js"></script>
-        <script src="js/dependent-checkboxes.js"></script>
+        <!-- // <script src="bower/jquery/dist/jquery.js"></script> -->
+        <!-- // <script src="js/dependent-checkboxes.js"></script> -->
+        <!-- // <script src="js/dependent-checkboxes-vanilla.js"></script> -->
+        <script src="js/babel/browser-polyfill.min.js"></script>
+        <script src="js/dependent-checkboxes-es2015.js"></script>
+        <!-- <script src="js/dependent-checkboxes-react.js"></script> -->
+
         <script>
-            var dependentCheckboxes = new DependentCheckboxes($('#dependent-checkboxes'));
+            new DependentCheckboxes(document.getElementById('dependent-checkboxes'));
         </script>
     </body>
 </html>

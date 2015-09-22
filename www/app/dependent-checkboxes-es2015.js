@@ -1,9 +1,7 @@
 class DependentCheckboxes {
     constructor(container) {
         this.container = container;
-        this.container.addEventListener('change', e => {
-            this.handleCheckboxChange(e.target);
-        });
+        this.container.addEventListener('change', e => this.handleCheckboxChange(e.target));
     }
 
     handleCheckboxChange(checkbox) {

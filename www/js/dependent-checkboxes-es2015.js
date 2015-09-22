@@ -15,7 +15,7 @@ var DependentCheckboxes = (function () {
 
         this.container = container;
         this.container.addEventListener('change', function (e) {
-            _this.handleCheckboxChange(e.target);
+            return _this.handleCheckboxChange(e.target);
         });
     }
 

@@ -6,20 +6,17 @@ var _createClass = (function () { function defineProperties(target, props) { for
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var DependentCheckboxes = (function () {
-	function DependentCheckboxes() {
+	function DependentCheckboxes(container) {
 		_classCallCheck(this, DependentCheckboxes);
+
+		this.container = container;
+		this.checkboxes = this.container.getElementsByTagName('input');
+		this.checkboxCheckAll = this.container.getElementsByClassName('check-all')[0];
+
+		this.container.addEventListener('change', this.handleChange.bind(this));
 	}
 
 	_createClass(DependentCheckboxes, [{
-		key: 'letructor',
-		value: function letructor(container) {
-			this.container = container;
-			this.checkboxes = this.container.getElementsByTagName('input');
-			this.checkboxCheckAll = this.container.getElementsByClassName('check-all')[0];
-
-			this.container.addEventListener('change', this.handleChange.bind(this));
-		}
-	}, {
 		key: 'handleChange',
 		value: function handleChange(e) {
 			var current = e.target;

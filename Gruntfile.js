@@ -54,13 +54,12 @@ module.exports = function(grunt) {
                     unused: false
                 },
                 src: [
-                    '<%= js %>/*.js'
+                    '<%= js %>/dependent-checkboxes-es2015.js'
                 ]
             },
             production: {
                 src: [
-                    '<%= js %>/dependent-checkboxes.js',
-                    '<%= js %>/dependent-checkboxes-vanilla.js'
+                    '<%= js %>/dependent-checkboxes-es2015.js'
                 ]
             }
         },
@@ -125,8 +124,7 @@ module.exports = function(grunt) {
             },
             jshint: {
                 files: [
-                    '<%= js %>/dependent-checkboxes.js',
-                    '<%= js %>/dependent-checkboxes-vanilla.js'
+                    '<%= js %>/dependent-checkboxes-es2015.js'
                 ],
                 tasks: ['jshint:dev']
             },

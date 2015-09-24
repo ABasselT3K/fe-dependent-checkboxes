@@ -54,13 +54,12 @@ module.exports = function(grunt) {
                     unused: false
                 },
                 src: [
-                    '<%= js %>/*.js'
+                    '<%= app %>/dependent-checkboxes-es2015.js'
                 ]
             },
             production: {
                 src: [
-                    '<%= js %>/dependent-checkboxes.js',
-                    '<%= js %>/dependent-checkboxes-vanilla.js'
+                    '<%= app %>/dependent-checkboxes-es2015.js',
                 ]
             }
         },
@@ -71,7 +70,7 @@ module.exports = function(grunt) {
                 esnext: true
             },
             src: [
-                '<%= js %>/*.js'
+                '<%= app %>/dependent-checkboxes-es2015.js'
             ]
         },
 
@@ -96,7 +95,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= js %>/dependent-checkboxes-es2015.js': '<%= app %>/dependent-checkboxes-es2015.js'
                 }
-            },
+            }/*,
             react: {
                 options: {
                     debug: true,
@@ -105,7 +104,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= js %>/dependent-checkboxes-react.js': '<%= app %>/dependent-checkboxes-react.jsx'
                 }
-            }
+            }*/
         },
 
         mocha: {
@@ -185,6 +184,6 @@ module.exports = function(grunt) {
     grunt.registerTask('jsdev', ['jshint:gruntfile', 'jshint:dev', 'browserify', 'test']);
     grunt.registerTask('js', ['jshint:gruntfile', 'jshint:production', 'jscs', 'browserify', 'test']);
     grunt.registerTask('test', ['mocha']);
-    grunt.registerTask('build', ['js', 'test']);
+    grunt.registerTask('build', ['js']);
 
 };
